@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>넌센스 퀴즈</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #f0f0f0;
+      margin: 0.5em 0;
+      padding: 0.75em 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    li:hover {
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <h1>넌센스 퀴즈</h1>
+  <ul id="quiz-list">
+    <li>나보다 10배 비싼 엄마는? 신사임당. 아들인 율곡 이이가 5,000원</li>
+    <li>새로나온 욕은? 뉴욕</li>
+    <li>세상에서 가장 큰 차는? 아프리카</li>
+    <li>아빠는 두명인데 엄마는 한명이면? 두부한모</li>
+    <li>학교는 다니는 곳이다. 그럼 핵교는? 댕기는 곳</li>
+    <li>아프지도 않은데 매일 쓰는 약은? 치약</li>
+    <li>감 중에서 제일 맛이 없는 감은? 열등감</li>
+    <li>세상에서 제일 맛있는 감은? 자신감</li>
+    <li>사과는 언제 따 먹어야 맛있을까? 주인이 안 볼 때</li>
+    <li>고기집이 배달이 가장 싫어하는 가스는? 배철수</li>
+    <li>모든 집은 영어로 하우스, 하얀 집은 화이트하우스, 그럼 투명한 집은? 비닐하우스</li>
+    <li>마티즈와 8톤 트럭이 부딪히면? 교통사고</li>
+    <li>흑인과 백인 사이 갓난아이 치아 색은? 갓난아이는 치아가 없다</li>
+    <li>인디언 계급 중 제일 높은 계급은? 추장 → 고추장 → 초고추장 → 태양초고추장</li>
+  </ul>
+
+  <script>
+    const quizList = document.getElementById('quiz-list');
+    quizList.addEventListener('click', (event) => {
+      const target = event.target;
+      if (target.tagName === 'LI') {
+        target.remove();
+      }
+    });
+  </script>
+</body>
+</html>
