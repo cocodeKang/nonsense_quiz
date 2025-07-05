@@ -3,62 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>넌센스 퀴즈</title>
+  <title>퀴즈 선택</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #f0f0f0;
-      margin: 0.5em 0;
-      padding: 0.75em 1em;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    li:hover {
-      background: #e0e0e0;
-    }
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+    h1 { text-align: center; margin-bottom: 1em; }
+    .menu, .quiz { text-align: center; }
+    .menu button, .quiz button.back { margin: 0.5em; padding: 0.75em 1.5em; font-size: 1em; border: none; border-radius: 8px; cursor: pointer; }
+    .menu button:hover, .quiz button.back:hover { background: #ddd; }
+    ul { list-style: none; padding: 0; }
+    li { background: #f0f0f0; margin: 0.5em 0; padding: 0.75em 1em; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+    li:hover { background: #e0e0e0; }
+    .quiz { display: none; }
   </style>
 </head>
 <body>
-  <h1>넌센스 퀴즈</h1>
-  <ul id="quiz-list">
-    <li>나보다 10배 비싼 엄마는? 신사임당. 아들인 율곡 이이가 5,000원</li>
-    <li>새로나온 욕은? 뉴욕</li>
-    <li>세상에서 가장 큰 차는? 아프리카</li>
-    <li>아빠는 두명인데 엄마는 한명이면? 두부한모</li>
-    <li>학교는 다니는 곳이다. 그럼 핵교는? 댕기는 곳</li>
-    <li>아프지도 않은데 매일 쓰는 약은? 치약</li>
-    <li>감 중에서 제일 맛이 없는 감은? 열등감</li>
-    <li>세상에서 제일 맛있는 감은? 자신감</li>
-    <li>사과는 언제 따 먹어야 맛있을까? 주인이 안 볼 때</li>
-    <li>고기집이 배달이 가장 싫어하는 가스는? 배철수</li>
-    <li>모든 집은 영어로 하우스, 하얀 집은 화이트하우스, 그럼 투명한 집은? 비닐하우스</li>
-    <li>마티즈와 8톤 트럭이 부딪히면? 교통사고</li>
-    <li>흑인과 백인 사이 갓난아이 치아 색은? 갓난아이는 치아가 없다</li>
-    <li>인디언 계급 중 제일 높은 계급은? 추장 → 고추장 → 초고추장 → 태양초고추장</li>
-  </ul>
+  <h1>퀴즈 선택</h1>
+  <div class="menu">
+    <button id="nonsenseBtn">넌센스 퀴즈</button>
+    <button id="oxBtn">OX 퀴즈</button>
+  </div>
+
+  <div id="nonsenseQuiz" class="quiz">
+    <h1>넌센스 퀴즈</h1>
+    <ul id="nonsense-list">
+      <li>나보다 10배 비싼 엄마는? 신사임당. 아들인 율곡 이이가 5,000원</li>
+      <li>새로나온 욕은? 뉴욕</li>
+      <li>세상에서 가장 큰 차는? 아프리카</li>
+      <li>아빠는 두명인데 엄마는 한명이면? 두부한모</li>
+      <li>학교는 다니는 곳이다. 그럼 핵교는? 댕기는 곳</li>
+      <li>아프지도 않은데 매일 쓰는 약은? 치약</li>
+      <li>감 중에서 제일 맛이 없는 감은? 열등감</li>
+      <li>세상에서 제일 맛있는 감은? 자신감</li>
+      <li>사과는 언제 따 먹어야 맛있을까? 주인이 안 볼 때</li>
+      <li>고기집이 배달이 가장 싫어하는 가스는? 배철수</li>
+      <li>모든 집은 영어로 하우스, 하얀 집은 화이트하우스, 그럼 투명한 집은? 비닐하우스</li>
+      <li>마티즈와 8톤 트럭이 부딪히면? 교통사고</li>
+      <li>흑인과 백인 사이 갓난아이 치아 색은? 갓난아이는 치아가 없다</li>
+      <li>인디언 계급 중 제일 높은 계급은? 추장 → 고추장 → 초고추장 → 태양초고추장</li>
+    </ul>
+    <button class="back">메뉴로 돌아가기</button>
+  </div>
+
+  <div id="oxQuiz" class="quiz">
+    <h1>OX 퀴즈</h1>
+    <ul id="ox-list">
+      <li>닭은 오른쪽 다리가 더 맛있다? O(오른쪽 다리에 근육이 많아서)</li>
+      <li>50원 짜리 동전에 보리알 개수는 15개 이상이다? X(보리알은 12개입니다)</li>
+      <li>500원 짜리에 있는 새는 기러기다? X(두루미가 그려져 있습니다)</li>
+      <li>50,000원 짜리 뒷면의 그림은 신사임당이 그린 그림이다? X(어몽룡의 월매도와 이정의 풍죽도입니다)</li>
+      <li>태양은 동쪽에서 뜬다? O</li>
+      <li>물은 0도에서 얼음이 된다? O</li>
+      <li>사자는 야생에서 주로 초원에 산다? O</li>
+      <li>우리나라 수도는 부산이다? X(수도는 서울입니다)</li>
+      <li>한국의 국기는 태극기다? O</li>
+      <li>사과는 노란색 과일이다? X(사과는 보통 빨간색입니다)</li>
+      <li>지구는 태양계에서 세 번째 행성이다? O</li>
+      <li>물고기는 폐로 숨을 쉰다? X(아가미로 호흡합니다)</li>
+      <li>눈이 올 때 우산을 쓰지 않는다? X(눈이 올 때도 우산을 쓰는 게 좋습니다)</li>
+      <li>하루는 24시간이다? O</li>
+    </ul>
+    <button class="back">메뉴로 돌아가기</button>
+  </div>
 
   <script>
-    const quizList = document.getElementById('quiz-list');
-    quizList.addEventListener('click', (event) => {
-      const target = event.target;
-      if (target.tagName === 'LI') {
-        target.remove();
-      }
+    const menu = document.querySelector('.menu');
+    const nonsenseBtn = document.getElementById('nonsenseBtn');
+    const oxBtn = document.getElementById('oxBtn');
+    const nonsenseQuiz = document.getElementById('nonsenseQuiz');
+    const oxQuiz = document.getElementById('oxQuiz');
+    const backButtons = document.querySelectorAll('.back');
+
+    nonsenseBtn.addEventListener('click', () => {
+      menu.style.display = 'none'; nonsenseQuiz.style.display = 'block';
+    });
+    oxBtn.addEventListener('click', () => {
+      menu.style.display = 'none'; oxQuiz.style.display = 'block';
+    });
+    backButtons.forEach(btn => btn.addEventListener('click', () => {
+      nonsenseQuiz.style.display = 'none'; oxQuiz.style.display = 'none'; menu.style.display = 'block';
+    }));
+
+    document.getElementById('nonsense-list').addEventListener('click', e => {
+      if (e.target.tagName === 'LI') e.target.remove();
+    });
+    document.getElementById('ox-list').addEventListener('click', e => {
+      if (e.target.tagName === 'LI') e.target.remove();
     });
   </script>
 </body>
